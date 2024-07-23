@@ -7,10 +7,25 @@ module.exports = {
   ],
   theme: {
     extend: {
+      margin: {
+        '70p': '70%',
+        '45p': '50%',
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      },
+      colors: {
+        mainblue: "#405D72",
+        accentblue: "#758694",
+        mainbeige: "#F7E7DC",
+        beigewhite: "#FFF8F3",
+      },
+      fontFamily: {
+        wagon: ["Wagon"],
+        anderson: ["Anderson"],
+        aloha: ["Aloha"],
       },
     },
   },

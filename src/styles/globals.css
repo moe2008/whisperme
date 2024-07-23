@@ -2,6 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Wagon";
+  src: url("../files/Wagon-ExtraLight.otf") format("opentype");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Anderson";
+  src: url("../files/AndersonGrotesk-Light.otf") format("opentype");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Aloha";
+  src: url("../files/AlohaMagazine-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -24,6 +45,51 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+.msg::-webkit-scrollbar {
+  width: 10px; /* Breite der Scrollbar */
+}
+
+.msg::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Farbe des Scrollbar-Tracks */
+  border-radius: 10px; /* Abgerundete Ecken des Scrollbar-Tracks */
+}
+
+.msg::-webkit-scrollbar-thumb {
+  background: #888; /* Farbe des Scrollbar-Thumbnails */
+  border-radius: 10px; /* Abgerundete Ecken des Scrollbar-Thumbnails */
+  border: 2px solid #f1f1f1; /* Umrandung um den Scrollbar-Thumbnail */
+}
+
+.msg::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Farbe des Scrollbar-Thumbnails beim Hover */
+}
+
+.chatscroll {
+  --sb-track-color: #232e33;
+  --sb-thumb-color: #758694;
+  --sb-size: 4px;
+}
+
+.chatscroll::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+.chatscroll::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 3px;
+}
+
+.chatscroll::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 3px;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  .chatscroll {
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+  }
 }
 
 @layer utilities {
